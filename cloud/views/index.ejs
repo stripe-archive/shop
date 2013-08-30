@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+<head>
+  <title>Shop</title>
+  <meta charset="utf-8" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/assets/css/shop.min.css?1375991897" />
+</head>
+
+<body id="shop">
+
+  <noscript>
+    <p>Please enable JavaScript to use the Shop.</p>
+  </noscript>
+
+  <div class="shop-container hidden">
+    <div class="loading-indicator">
+      <div class="spinner"></div>
+    </div>
+
+    <!-- message -->
+    <div class="message">
+      <div class="inner">
+        <div class="icon loading"></div>
+        <p class="title">Processing your order!</p>
+        <p class="subline">
+          Give us a few seconds&hellip;
+        </p>
+      </div>
+    </div>
+    <!-- /message -->
+
+    <div class="add-to-bag-helper"><div class="image"></div></div>
+
+    <div class="interface">
+      <div class="logo">
+        <a class="shop" href="/">Shop</a>
+      </div>
+
+      <!-- bag -->
+      <div id="bag" class="bag">
+
+        <!-- button -->
+        <div id="button" class="button">
+          <p class="label">Your Bag</p>
+          <div class="count">
+            <p class="number">
+              <!-- value inserted by js -->
+            </p>
+          </div>
+        </div>
+        <!-- /button -->
+
+        <!-- dropdown -->
+        <div id="dropdown" class="dropdown">
+          <div class="empty">
+            <div class="t-shirt"></div>
+            <p>You haven't picked a t-shirt yet!</p>
+          </div>
+
+          <div class="item-container">
+            <div class="error-message"></div>
+
+            <div class="items">
+              <!-- items are inserted by js -->
+            </div>
+
+            <div class="total">
+              <p class="value">
+                <!-- value inserted by js -->
+              </p>
+              <p class="label">Total</p>
+            </div>
+
+            <form method="post" action="/pay">
+              <input type="hidden" name="_csrf" value="<%= csrf_field %>" />
+              <input type="hidden" name="order" id="order" value="" />
+              <button class="stripe-button-el"><span>Purchase</span></button>
+            </form>
+          </div>
+        </div>
+        <!-- /dropdown -->
+
+      </div>
+      <!-- /bag -->
+
+      <!-- displayed items -->
+      <div class="displayed-items">
+        <div class="item left">
+          <p class="price item_price"><span>$</span><%= config.price_per_shirt %></p>
+          <p class="name item_name">Unisex Standard Shirt</p>
+          <div class="size">
+            <div class="shim-select"><span class="label">Select Size</span> <div class="arrows"></div></div>
+            <select name="size">
+              <option selected disabled value="">Select Size</option>
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+              <option value="XL">X Large</option>
+              <option value="2XL">2X Large</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="item right">
+          <p class="price item_price"><span>$</span><%= config.price_per_shirt %></p>
+          <p class="name item_name">Women's Standard Shirt</p>
+          <div class="size">
+            <div class="shim-select"><span class="label">Select Size</span> <div class="arrows"></div></div>
+            <select name="size">
+              <option selected disabled value="">Select Size</option>
+              <option value="S">Small</option>
+              <option value="M">Medium</option>
+              <option value="L">Large</option>
+              <option value="XL">X Large</option>
+              <option value="2XL">2X Large</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <!-- /display items -->
+
+    </div>
+
+    <div class="showcase scaled"></div>
+
+  </div>
+
+  <!-- JavaScript -->
+  <script type="text/template" id="item-template">
+    <div class="item">
+      <div class="inner">
+        <p class="name"><<%= '%' %>- item.name %></p>
+        <div class="price-qty">
+          <span class="remove"></span>
+          <input class="qty" name="qty" value="<<%= '%' %>- item.quantity %>" />
+          <p class="price">
+            <span class="value"><em>$</em><%= config.price_per_shirt %></span> &times;
+          </p>
+        </div>
+      </div>
+    </div>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script src="https://checkout.stripe.com/v3/checkout.js"></script>
+
+  <script>var stripeKey = '<%= config.stripe_publishable_key %>';</script>
+  <script src="/assets/js/shop.min.js?1377809478"></script>
+
+</body>
+</html>

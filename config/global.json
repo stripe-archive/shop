@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Shop": {
+          "applicationId": "TODO: see README.md for how to obtain",
+          "masterKey": "TODO: see README.md for how to obtain"
+        }, 
+        "_default": {
+            "link": "Shop"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.9"
+    }
+}
