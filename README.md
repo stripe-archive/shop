@@ -26,7 +26,8 @@ To get your own instance of Shop up and running, you'll need to do the
 following:
 
 1. Create a [new Parse app](https://parse.com/apps/new).
-1. Copy the Application ID and Master Key to `config/global.json`
+1. Copy `config/global.json` to `config/local.json`.
+1. Add the Application ID and Master Key to `config/local.json`.
 1. Set up the `parse` command line utility (you may find [their
 docs](https://parse.com/docs/cloud_code_guide) helpful).
 1. Create a `parseapp.com` subdomain for your app. The same docs
