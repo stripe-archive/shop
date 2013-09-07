@@ -187,7 +187,8 @@ $(function() {
       shippingAddress: true,
       label: 'Purchase',
       token: submitForm,
-      amount: getTotalPrice(bag.getItems()) * 100
+      amount: getTotalPrice(bag.getItems()) * 100,
+      applicationID: 'ShopV1'
     });
   });
 
