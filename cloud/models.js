@@ -80,7 +80,6 @@ Order.schema = {
   name: {required: true, min_length: 2, max_length: 100, type: 'string'},
   stripe_token: {required: true, min_length: 2, max_length: 100, type: 'string'},
 
-  address: {required: true, min_length: 2, max_length: 100, type: 'string'},
   address_line_1: {type: 'string'},
   address_line_2: {type: 'string'},
   address_city: {type: 'string'},

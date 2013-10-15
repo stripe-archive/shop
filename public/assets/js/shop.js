@@ -217,7 +217,6 @@ $(function() {
       // accumulate data from checkout
       var data = { stripe_token: token.id };
       data.name = fields.shipping_name;
-      data.address = fields.shipping_address;
       data.address_line_1 = fields.shipping_address_line1;
       data.address_line_2 = fields.shipping_address_line2;
       data.address_city = fields.shipping_address_city;
