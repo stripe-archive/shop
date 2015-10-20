@@ -1,4 +1,4 @@
-# Shop
+# Shopping
 
 ![Shop](https://raw.github.com/stripe/shop/master/examples/screenshot.png)
 
