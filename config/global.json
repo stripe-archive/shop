@@ -1,6 +1,6 @@
 {
     "applications": {
-        "Shop": {
+        "Shop": { 
           "applicationId": "TODO: see README.md for how to obtain",
           "masterKey": "TODO: see README.md for how to obtain"
         }, 
